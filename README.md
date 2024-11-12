@@ -85,3 +85,45 @@ We select the **ASP.NET Core Web App (Model-View-Controller)** template and pres
 
 ![image](https://github.com/user-attachments/assets/1dfb59c2-0c4e-4c25-82e0-39806550e3b7)
 
+We set the project name **Identity.API**, location, and press on the Next button 
+
+![image](https://github.com/user-attachments/assets/239b21b9-1f6c-4c76-9ad4-656c9b21b999)
+
+We select the **.NET 9** framework and press the Create button
+
+![image](https://github.com/user-attachments/assets/197f5589-1db0-4db7-9e48-9a2de1e2920a)
+
+Note: in this image we selected .NET 8, because I am explaining this sample in a computer with .NET 8, but in your computer you should install and select .NET 9
+
+We verify the **Identity.API** project folders and files structure
+
+![image](https://github.com/user-attachments/assets/78450c31-0dc4-4ecd-8eab-8d2cfe5ea9fb)
+
+## 5. We Delete Controllers, Models and Views folders 
+
+![image](https://github.com/user-attachments/assets/2286cda7-1818-4a2d-80f7-395da29ea7e9)
+
+The project now should look like this
+
+![image](https://github.com/user-attachments/assets/7b5a87b2-26da-4d4c-b495-1fe1b99d8f97)
+
+## 6. We Create the Identity.API project folders structure
+
+![image](https://github.com/user-attachments/assets/0a37954a-15dd-48ec-98fe-927d42c33977)
+
+## 7. We Copy the IdentityServer4 project content inside the Identity.API project
+
+We copy the folders content in UI into the Identity.API project
+
+![image](https://github.com/user-attachments/assets/42bbbf4d-e895-4cf4-a8a3-3d55ecf7b240)
+
+We verify the new files copied 
+
+![image](https://github.com/user-attachments/assets/32e1f30b-ecdf-4538-b4e7-6e758ed1f6a9)
+
+IMPORTANT NOTE: we have to delete the **Migrations** folder
+
+![image](https://github.com/user-attachments/assets/c7570d09-c064-4a8f-8d35-0482294f8a0f)
+
+## 8. We 
+
