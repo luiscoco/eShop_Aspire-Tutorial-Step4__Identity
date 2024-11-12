@@ -125,5 +125,10 @@ IMPORTANT NOTE: we have to delete the **Migrations** folder
 
 ![image](https://github.com/user-attachments/assets/c7570d09-c064-4a8f-8d35-0482294f8a0f)
 
-## 8. We 
+## 8. We Create three folder inside the Models folder
+
+![image](https://github.com/user-attachments/assets/c3933d4b-ed53-44af-9d86-88cdb0f6b37d)
+
+## 9. We move 
+
 
