@@ -149,7 +149,26 @@ We verify the final results
 
 ![image](https://github.com/user-attachments/assets/46f02659-cc99-4fc4-a7b0-04e7158642b4)
 
-## 12. 
+## 12. We copy the JavaSript files in the wwwroot content
+
+![image](https://github.com/user-attachments/assets/4c16ee35-1936-4833-86dc-127eaf7d6f99)
+
+**signin-redirect.js**
+
+```javascript
+window.location.href = document.querySelector("meta[http-equiv=refresh]").getAttribute("data-url");
+```
+
+**signout-redirect.js**
+
+```javascript
+window.addEventListener("load", function () {
+    var a = document.querySelector("a.PostLogoutRedirectUri");
+    if (a) {
+        window.location = a.href;
+    }
+});
+```
 
 
 ## 13. 
