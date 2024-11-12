@@ -37,13 +37,17 @@ Inside the IdentityServer4 documentation site, we can navigate to QuickStart and
 
 ![image](https://github.com/user-attachments/assets/8ed25bb2-2d35-4939-83d0-56f54667c1c5)
 
+We create a subfolder inside our solution
+
+![image](https://github.com/user-attachments/assets/ae94bb34-0a8c-492b-b65f-5210e42adb35)
+
 We have to open a new command prompt window and run this command to install the IdentityServer4 templates:
 
 ```
 dotnet new -i IdentityServer4.Templates
 ```
 
-![image](https://github.com/user-attachments/assets/be93e246-267b-44d5-9913-458b7c2cb697)
+![image](https://github.com/user-attachments/assets/dc641980-7d89-40b7-b7cc-87cf0603e4c5)
 
 We can also verify the templates installation in Visual Studio
 
