@@ -49,8 +49,19 @@ We can also verify the templates installation in Visual Studio
 
 ![image](https://github.com/user-attachments/assets/b22a5deb-7736-493e-9e30-18d40779e37f)
 
-## 3. We o
+## 3. We Create a new IdentityServer4 project
 
+We have to download the application from this repo:
+
+https://github.com/luiscoco/eShop_Aspire-Tutorial-Step3_WebApp_Catalog
+
+We unzip the application and se open it with the File Explorer:
+
+![image](https://github.com/user-attachments/assets/eb79ebe2-4bcc-433d-a496-69a8039dfc8a)
+
+We run this command ```dotnet new is4aspid``` for creating a new project with the template **IdentityServer4 with ASP.NET Core Identity**
+
+![image](https://github.com/user-attachments/assets/9cefb11e-e38b-468b-883a-b41c13d43100)
 
 
 
