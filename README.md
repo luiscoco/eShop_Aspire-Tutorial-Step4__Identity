@@ -174,11 +174,22 @@ window.addEventListener("load", function () {
 
 ![image](https://github.com/user-attachments/assets/317e5e8f-c017-418e-8559-c35a65bfe462)
 
-## 14. 
+## 14. We also have to copy the icons and _references.js file in the wwwroot folder
 
+![image](https://github.com/user-attachments/assets/75d8bd49-d30b-4add-8269-d04b94199874)
 
+**_references.js**
 
+```javascript
+/// <autosync enabled="true" />
+/// <reference path="js/site.js" />
+/// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
+/// <reference path="lib/jquery/dist/jquery.js" />
+/// <reference path="lib/jquery-validation/dist/jquery.validate.js" />
+/// <reference path="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
+```
 
+## 15. 
 
 
 
