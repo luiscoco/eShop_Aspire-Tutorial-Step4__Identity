@@ -129,6 +129,11 @@ IMPORTANT NOTE: we have to delete the **Migrations** folder
 
 ![image](https://github.com/user-attachments/assets/c3933d4b-ed53-44af-9d86-88cdb0f6b37d)
 
-## 9. We move 
+## 9. We move the model files from Quickstart->Account to Models->AccountViewModels
+
+
+
+![image](https://github.com/user-attachments/assets/19e164b2-aed0-42ff-a523-d9cc4ac90acc)
+
 
 
