@@ -195,4 +195,12 @@ We right click on the Identity.API project name and we select the menu option **
 
 ![image](https://github.com/user-attachments/assets/859bf34e-1a1c-48f3-ace0-0e34cf94709c)
 
-## 16. 
+We verify in the **eShop.AppHost** project was added the **Identity.API** project reference
+
+![image](https://github.com/user-attachments/assets/1330049b-4cf0-480d-b4c3-182e2b1d1f15)
+
+
+
+
+## 16. We load the Nuget Packages in the Identity.API project
+
