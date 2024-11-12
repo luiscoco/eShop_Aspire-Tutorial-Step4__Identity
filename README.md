@@ -129,11 +129,24 @@ IMPORTANT NOTE: we have to delete the **Migrations** folder
 
 ![image](https://github.com/user-attachments/assets/c3933d4b-ed53-44af-9d86-88cdb0f6b37d)
 
-## 9. We move the model files from Quickstart->Account to Models->AccountViewModels
-
-
+## 9. We move the models files from Quickstart->Account to Models->AccountViewModels
 
 ![image](https://github.com/user-attachments/assets/19e164b2-aed0-42ff-a523-d9cc4ac90acc)
 
+We verify the result
 
+![image](https://github.com/user-attachments/assets/002c0fa0-50ed-4905-8179-4b397ec4d6b2)
+
+## 10. We move the models files from Quickstart->Consent to Models->ConsentViewModels
+
+![image](https://github.com/user-attachments/assets/2e0688c6-9c7b-49b2-aef5-fc857f62df44)
+
+We verify the final results
+
+![image](https://github.com/user-attachments/assets/2de00e90-5c1b-4c1f-8df3-751934a75aeb)
+
+## 11. 
+
+
+## 11. 
 
