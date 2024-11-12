@@ -65,6 +65,23 @@ We run this command ```dotnet new is4aspid``` for creating a new project with th
 
 ![image](https://github.com/user-attachments/assets/dc641980-7d89-40b7-b7cc-87cf0603e4c5)
 
+We can verify the folders and files created for the new IdentityServer4 project
 
+![image](https://github.com/user-attachments/assets/af146df4-3e72-4cf2-bd55-28e33c54e927)
 
+## 4. We Create a new project Identity.API project in the eShop solution
+
+Now we have to run Visual Studio 2022 Community Edition and we Open the Solution previously downloaded from our github repo
+
+https://github.com/luiscoco/eShop_Aspire-Tutorial-Step3_WebApp_Catalog
+
+![image](https://github.com/user-attachments/assets/ba546711-de02-4221-83d6-38faca3b58b5)
+
+We right click on the Solution name and select **Add -> New Projec...** 
+
+![image](https://github.com/user-attachments/assets/e0792ba6-34ee-469b-849e-d71076d43391)
+
+We select the **ASP.NET Core Web App (Model-View-Controller)** template and press on Next button
+
+![image](https://github.com/user-attachments/assets/1dfb59c2-0c4e-4c25-82e0-39806550e3b7)
 
