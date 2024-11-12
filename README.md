@@ -145,8 +145,9 @@ We verify the final results
 
 ![image](https://github.com/user-attachments/assets/2de00e90-5c1b-4c1f-8df3-751934a75aeb)
 
-## 11. 
+## 11. We copy the files inside the Models->ManageViewModels folder
 
+![image](https://github.com/user-attachments/assets/46f02659-cc99-4fc4-a7b0-04e7158642b4)
 
 ## 12.
 
