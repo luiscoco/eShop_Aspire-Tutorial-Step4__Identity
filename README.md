@@ -170,11 +170,11 @@ window.addEventListener("load", function () {
 });
 ```
 
+## 13. We copy the fonts and images in the wwwroot folder
 
-## 13. 
+![image](https://github.com/user-attachments/assets/317e5e8f-c017-418e-8559-c35a65bfe462)
 
-
-## 14.
+## 14. 
 
 
 
