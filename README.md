@@ -149,7 +149,17 @@ We verify the final results
 
 ![image](https://github.com/user-attachments/assets/46f02659-cc99-4fc4-a7b0-04e7158642b4)
 
-## 12.
+## 12. 
+
+
+## 13. 
+
+
+## 14.
+
+
+
+
 
 
 
