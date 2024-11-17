@@ -193,7 +193,7 @@ window.addEventListener("load", function () {
 /// <reference path="lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js" />
 ```
 
-## 15. We add .NET Aspire Orchestrator Support... to the Identity.API project
+## 15. We add .NET Aspire Orchestrator Support to the Identity.API project
 
 We right click on the Identity.API project name and we select the menu option ****
 
