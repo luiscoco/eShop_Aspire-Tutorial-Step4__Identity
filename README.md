@@ -121,7 +121,7 @@ We verify the new files copied
 
 ![image](https://github.com/user-attachments/assets/32e1f30b-ecdf-4538-b4e7-6e758ed1f6a9)
 
-IMPORTANT NOTE: we have to delete the **Migrations** folder
+IMPORTANT NOTE: we have to **delete** the **Migrations** folder
 
 ![image](https://github.com/user-attachments/assets/c7570d09-c064-4a8f-8d35-0482294f8a0f)
 
