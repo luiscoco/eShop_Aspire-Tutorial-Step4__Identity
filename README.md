@@ -91,9 +91,7 @@ We set the project name **Identity.API**, location, and press on the Next button
 
 We select the **.NET 9** framework and press the Create button
 
-![image](https://github.com/user-attachments/assets/197f5589-1db0-4db7-9e48-9a2de1e2920a)
-
-Note: in this image we selected .NET 8, because I am explaining this sample in a computer with .NET 8, but in your computer you should install and select .NET 9
+![image](https://github.com/user-attachments/assets/0b8e3218-3340-4879-95f1-045fff664aa5)
 
 We verify the **Identity.API** project folders and files structure
 
@@ -203,8 +201,10 @@ We verify in the **eShop.AppHost** project was added the **Identity.API** projec
 
 ![image](https://github.com/user-attachments/assets/1330049b-4cf0-480d-b4c3-182e2b1d1f15)
 
-
-
-
 ## 16. We load the Nuget Packages in the Identity.API project
 
+
+
+## 17. We confirm the "eShop.ServiceDefaulst" project was added as a reference in the Identity.API project
+
+![image](https://github.com/user-attachments/assets/e3876eda-617c-4ce4-ac4b-fc050ac03b57)
