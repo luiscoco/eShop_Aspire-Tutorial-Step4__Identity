@@ -264,4 +264,13 @@ It defines the core interfaces, abstractions, and data storage mechanisms used b
 
 ## 20. We update the middleware(Program.cs) in the eShop.AppHost project
 
-## 21. 
+
+
+## 21. We add the "User" folder inside "Pages" folder in the WebApp project
+
+
+
+## 22. We add the User Login and Logout razor components
+
+
+## 23. 
