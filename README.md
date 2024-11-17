@@ -203,8 +203,17 @@ We verify in the **eShop.AppHost** project was added the **Identity.API** projec
 
 ## 16. We load the Nuget Packages in the Identity.API project
 
+We right click on the **Dependencies** folder and select the menu option **Manage Nuget Packages...**
 
+![image](https://github.com/user-attachments/assets/7c1e57ff-a964-47cb-8494-442fe553175c)
+
+We load the following Nuget packages
+
+![image](https://github.com/user-attachments/assets/0b101afe-0d9e-4f81-85f6-7e9dc160f914)
 
 ## 17. We confirm the "eShop.ServiceDefaulst" project was added as a reference in the Identity.API project
 
 ![image](https://github.com/user-attachments/assets/e3876eda-617c-4ce4-ac4b-fc050ac03b57)
+
+## 18. We add new files in the eShop.ServiceDefaulst project
+
