@@ -217,23 +217,34 @@ It simplifies database connectivity by registering the **DbContext** in the depe
 
 This package streamlines the setup process, allowing developers to focus on application logic while ensuring efficient and reliable database interactions
 
-**AutoMapper** is a popular **object-to-object mapping** library in .NET. It helps streamline the process of copying data between objects, particularly when the objects have similar structures but are used for different purposes, such as transferring data between a **Data Transfer Object (DTO)** and a domain model
+**AutoMapper**: is a popular **object-to-object mapping** library in .NET. It helps streamline the process of copying data between objects, particularly when the objects have similar structures but are used for different purposes, such as transferring data between a **Data Transfer Object (DTO)** and a domain model
 
-**Duende IdentityServer** is a powerful and flexible framework for implementing **OpenID Connect (OIDC)** and **OAuth 2.0** standards in .NET applications
+**Duende IdentityServer**: is a powerful and flexible framework for implementing **OpenID Connect (OIDC)** and **OAuth 2.0** standards in .NET applications
 
 It enables secure user authentication and API access management in modern applications
 
-**Duende.IdentityServer.AspNetIdentity** is an integration package that combines the features of **Duende IdentityServer** with **ASP.NET Core Identity**, providing a comprehensive solution for managing user authentication and authorization in .NET applications
+**Duende.IdentityServer.AspNetIdentity**: is an integration package that combines the features of **Duende IdentityServer** with **ASP.NET Core Identity**, providing a comprehensive solution for managing user authentication and authorization in .NET applications
 
-**Duende.IdentityServer.EntityFramework** is an extension package for **Duende IdentityServer** that enables the use of **Entity Framework Core (EF Core)** to manage the configuration and operational data of IdentityServer in a database
+**Duende.IdentityServer.EntityFramework**: is an extension package for **Duende IdentityServer** that enables the use of **Entity Framework Core (EF Core)** to manage the configuration and operational data of IdentityServer in a database
 
 It provides a way to persist IdentityServer data such as clients, resources, and tokens in relational databases
 
-**Duende.IdentityServer.Storage** is a foundational package in the Duende IdentityServer ecosystem
+**Duende.IdentityServer.Storage**¨: is a foundational package in the Duende IdentityServer ecosystem
 
 It defines the core interfaces, abstractions, and data storage mechanisms used by IdentityServer to manage its configuration and operational data
 
 
+**Microsoft.AspNetCore.Identity.EntityFrameworkCore**:
+
+**Microsoft.AspNetCore.Identity.UI**:
+
+**Microsoft.EntityFrameworkCore.Tools**:
+
+**Microsoft.Web.LibraryManager.Build**:
+
+**Newtonsoft.Json**:
+
+**Npgsql.EntityFrameworkCore.PostgreSQL**:
 
 ## 17. We confirm the "eShop.ServiceDefaulst" project was added as a reference in the Identity.API project
 
