@@ -250,5 +250,18 @@ It defines the core interfaces, abstractions, and data storage mechanisms used b
 
 ![image](https://github.com/user-attachments/assets/e3876eda-617c-4ce4-ac4b-fc050ac03b57)
 
-## 18. We add new files in the eShop.ServiceDefaulst project
+## 18. We add Nuget Packages in the eShop.ServiceDefaulst project
 
+![image](https://github.com/user-attachments/assets/7bf310d7-eae9-4940-a1a7-a01ffe804dd1)
+
+**Microsoft.AspNetCore.Authentication.JwtBearer**:
+
+**OpenTelemetry.Contrib.Instrumentation.GrpcCore**:
+
+## 19. We add new files in the eShop.ServiceDefaulst project
+
+
+
+## 20. We update the middleware(Program.cs) in the eShop.AppHost project
+
+## 21. 
