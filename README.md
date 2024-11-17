@@ -195,7 +195,7 @@ window.addEventListener("load", function () {
 
 ## 15. We add .NET Aspire Orchestrator Support to the Identity.API project
 
-We right click on the Identity.API project name and we select the menu option ****
+We right click on the Identity.API project name and we select the menu option **.NET Aspire Orchestrator Support...**
 
 ![image](https://github.com/user-attachments/assets/859bf34e-1a1c-48f3-ace0-0e34cf94709c)
 
