@@ -270,7 +270,10 @@ It defines the core interfaces, abstractions, and data storage mechanisms used b
 
 
 
-## 22. We add the User Login and Logout razor components
+## 22. We add the User "Login.razor" and "Logout.razor" components
 
+![image](https://github.com/user-attachments/assets/7b734cca-4049-4fb9-b8d1-aec6aeac3d6c)
 
 ## 23. 
+
+
