@@ -223,6 +223,12 @@ This package streamlines the setup process, allowing developers to focus on appl
 
 It enables secure user authentication and API access management in modern applications
 
+**Duende.IdentityServer.AspNetIdentity** is an integration package that combines the features of **Duende IdentityServer** with **ASP.NET Core Identity**, providing a comprehensive solution for managing user authentication and authorization in .NET applications
+
+**Duende.IdentityServer.EntityFramework** is an extension package for **Duende IdentityServer** that enables the use of **Entity Framework Core (EF Core)** to manage the configuration and operational data of IdentityServer in a database
+
+It provides a way to persist IdentityServer data such as clients, resources, and tokens in relational databases
+
 
 
 ## 17. We confirm the "eShop.ServiceDefaulst" project was added as a reference in the Identity.API project
