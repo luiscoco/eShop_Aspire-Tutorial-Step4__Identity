@@ -211,6 +211,20 @@ We load the following Nuget packages
 
 ![image](https://github.com/user-attachments/assets/0b101afe-0d9e-4f81-85f6-7e9dc160f914)
 
+**Aspire.Npgsql.EntityFrameworkCore.PostgreSQL**: integrates **PostgreSQL** with **Entity Framework Core** in .NET applications
+
+It simplifies database connectivity by registering the **DbContext** in the dependency injection container, enabling features such as connection pooling, automatic retries, health checks, logging, and telemetry 
+
+This package streamlines the setup process, allowing developers to focus on application logic while ensuring efficient and reliable database interactions
+
+**AutoMapper** is a popular **object-to-object mapping** library in .NET. It helps streamline the process of copying data between objects, particularly when the objects have similar structures but are used for different purposes, such as transferring data between a **Data Transfer Object (DTO)** and a domain model
+
+**Duende IdentityServer** is a powerful and flexible framework for implementing **OpenID Connect (OIDC)** and **OAuth 2.0** standards in .NET applications
+
+It enables secure user authentication and API access management in modern applications
+
+
+
 ## 17. We confirm the "eShop.ServiceDefaulst" project was added as a reference in the Identity.API project
 
 ![image](https://github.com/user-attachments/assets/e3876eda-617c-4ce4-ac4b-fc050ac03b57)
