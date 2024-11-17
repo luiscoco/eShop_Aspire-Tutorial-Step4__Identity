@@ -229,6 +229,10 @@ It enables secure user authentication and API access management in modern applic
 
 It provides a way to persist IdentityServer data such as clients, resources, and tokens in relational databases
 
+**Duende.IdentityServer.Storage** is a foundational package in the Duende IdentityServer ecosystem
+
+It defines the core interfaces, abstractions, and data storage mechanisms used by IdentityServer to manage its configuration and operational data
+
 
 
 ## 17. We confirm the "eShop.ServiceDefaulst" project was added as a reference in the Identity.API project
