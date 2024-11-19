@@ -254,9 +254,39 @@ It defines the core interfaces, abstractions, and data storage mechanisms used b
 
 ![image](https://github.com/user-attachments/assets/7bf310d7-eae9-4940-a1a7-a01ffe804dd1)
 
-**Microsoft.AspNetCore.Authentication.JwtBearer**:
+**Microsoft.AspNetCore.Authentication.JwtBearer**:  is a library that provides functionality for integrating JSON Web Token (JWT) authentication into ASP.NET Core applications. It is specifically designed for applications that use bearer tokens to authenticate and authorize API requests
 
-**OpenTelemetry.Contrib.Instrumentation.GrpcCore**:
+Key Features:
+
+Token Validation: Automatically validates JWTs issued by trusted authentication servers or identity providers
+
+Integration: Easily integrates with ASP.NET Core's authentication middleware
+
+Claims Extraction: Extracts user claims from the validated token, making them available in the application
+
+Configuration: Supports customization of token validation parameters, including issuer, audience, signing keys, and token lifetime
+
+Security Standards: Implements standard security practices for JWT validation, such as signature validation and checking token expiration
+
+Common Use Cases:
+
+Securing RESTful APIs
+
+Implementing authentication and authorization workflows for applications using OpenID Connect or custom JWT providers
+
+Enabling token-based authentication for microservices
+
+**OpenTelemetry.Contrib.Instrumentation.GrpcCore**: provides client and server interceptors for gRPC Core, enabling the collection of telemetry data such as traces and metrics within .NET applications
+
+By integrating this package, developers can monitor and analyze gRPC communications, facilitating observability and performance optimization
+
+Key Features:
+
+Client and Server Interceptors: Offers interceptors for both gRPC clients and servers, allowing comprehensive telemetry collection across gRPC interactions
+
+OpenTelemetry Integration: Seamlessly integrates with the OpenTelemetry .NET SDK, supporting standardized telemetry data collection and export
+
+.NET Standard 2.0 Compatibility: Targets .NET Standard 2.0, ensuring compatibility with a wide range of .NET implementations
 
 ## 19. We add new files in the eShop.ServiceDefaulst project
 
