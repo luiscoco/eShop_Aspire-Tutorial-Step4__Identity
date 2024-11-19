@@ -864,7 +864,7 @@ namespace eShop.Identity.API.Configuration
 }
 ```
 
-## 26. We
+## 26. We add the Services in the Identity.API project 
 
 ![image](https://github.com/user-attachments/assets/ff5deba0-c31b-4cd2-8fa4-ace5cea0c2ce)
 
