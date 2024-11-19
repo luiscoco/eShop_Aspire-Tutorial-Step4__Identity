@@ -1141,6 +1141,7 @@ public static class Extensions
 
         // Application services
         builder.Services.AddScoped<LogOutService>();
+        builder.Services.AddSingleton<IProductImageUrlProvider, ProductImageUrlProvider>();
 
         // HTTP and GRPC client registrations
         builder.Services.AddHttpClient<CatalogService>(o => o.BaseAddress = new("http://catalog-api"))
