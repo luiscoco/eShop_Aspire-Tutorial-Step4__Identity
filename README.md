@@ -1094,7 +1094,24 @@ We navigate to the User.razor component inside the **Components->Layout->HeaderB
 
 ![image](https://github.com/user-attachments/assets/5ea1face-561f-4cd6-a51c-a07e4fa7472e)
 
-## 32. 
+## 32. We add the LogOutService in the WebApp project
+
+![image](https://github.com/user-attachments/assets/ccdfe305-a029-49ce-bb9c-3d5c5569a238)
+
+**LogOutService.cs**
+
+```csharp
+namespace eShop.WebApp.Services;
+
+public class LogOutService
+{
+    public async Task LogOutAsync(HttpContext httpContext)
+    {
+        await httpContext.SignOutAsync(CookieAuthenticationDefaults.AuthenticationScheme);
+        await httpContext.SignOutAsync(OpenIdConnectDefaults.AuthenticationScheme);
+    }
+}
+```
 
 ## 33. We run the application
 
