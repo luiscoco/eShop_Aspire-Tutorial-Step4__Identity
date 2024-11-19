@@ -307,7 +307,127 @@ OpenTelemetry Integration: Seamlessly integrates with the OpenTelemetry .NET SDK
 
 ## 19. We add new files in the eShop.ServiceDefaulst project
 
+![image](https://github.com/user-attachments/assets/4a11792c-a7e0-4f5a-8666-4e9af48e024b)
 
+**AuthenticationExtensions.cs**
+
+```csharp
+namespace eShop.ServiceDefaults;
+
+public static class AuthenticationExtensions
+{
+    public static IServiceCollection AddDefaultAuthentication(this IHostApplicationBuilder builder)
+    {
+        var services = builder.Services;
+        var configuration = builder.Configuration;
+
+        // {
+        //   "Identity": {
+        //     "Url": "http://identity",
+        //     "Audience": "basket"
+        //    }
+        // }
+
+        var identitySection = configuration.GetSection("Identity");
+
+        if (!identitySection.Exists())
+        {
+            // No identity section, so no authentication
+            return services;
+        }
+
+        // prevent from mapping "sub" claim to nameidentifier.
+        JsonWebTokenHandler.DefaultInboundClaimTypeMap.Remove("sub");
+
+        services.AddAuthentication().AddJwtBearer(options =>
+        {
+            var identityUrl = identitySection.GetRequiredValue("Url");
+            var audience = identitySection.GetRequiredValue("Audience");
+
+            options.Authority = identityUrl;
+            options.RequireHttpsMetadata = false;
+            options.Audience = audience;
+            
+#if DEBUG
+            //Needed if using Android Emulator Locally. See https://learn.microsoft.com/en-us/dotnet/maui/data-cloud/local-web-services?view=net-maui-8.0#android
+            options.TokenValidationParameters.ValidIssuers = [identityUrl, "https://10.0.2.2:5243"];
+#else
+            options.TokenValidationParameters.ValidIssuers = [identityUrl];
+#endif
+            
+            options.TokenValidationParameters.ValidateAudience = false;
+        });
+
+        services.AddAuthorization();
+
+        return services;
+    }
+```
+
+**ClaimsPrincipalExtensions.cs**
+
+```csharp
+namespace eShop.ServiceDefaults;
+
+public static class ClaimsPrincipalExtensions
+{
+    public static string? GetUserId(this ClaimsPrincipal principal)
+        => principal.FindFirst("sub")?.Value;
+
+    public static string? GetUserName(this ClaimsPrincipal principal) =>
+        principal.FindFirst(x => x.Type == ClaimTypes.Name)?.Value;
+}
+```
+
+****
+
+```csharp
+namespace eShop.ServiceDefaults;
+
+public static class HttpClientExtensions
+{
+    public static IHttpClientBuilder AddAuthToken(this IHttpClientBuilder builder)
+    {
+        builder.Services.AddHttpContextAccessor();
+
+        builder.Services.TryAddTransient<HttpClientAuthorizationDelegatingHandler>();
+
+        builder.AddHttpMessageHandler<HttpClientAuthorizationDelegatingHandler>();
+
+        return builder;
+    }
+
+    private class HttpClientAuthorizationDelegatingHandler : DelegatingHandler
+    {
+        private readonly IHttpContextAccessor _httpContextAccessor;
+
+        public HttpClientAuthorizationDelegatingHandler(IHttpContextAccessor httpContextAccessor)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        public HttpClientAuthorizationDelegatingHandler(IHttpContextAccessor httpContextAccessor, HttpMessageHandler innerHandler) : base(innerHandler)
+        {
+            _httpContextAccessor = httpContextAccessor;
+        }
+
+        protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request, CancellationToken cancellationToken)
+        {
+            if (_httpContextAccessor.HttpContext is HttpContext context)
+            {
+                var accessToken = await context.GetTokenAsync("access_token");
+
+                if (accessToken is not null)
+                {
+                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", accessToken);
+                }
+            }
+
+            return await base.SendAsync(request, cancellationToken);
+        }
+    }
+}
+```
 
 ## 20. We update the middleware(Program.cs) in the eShop.AppHost project
 
