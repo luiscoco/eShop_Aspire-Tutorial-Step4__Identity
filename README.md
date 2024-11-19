@@ -864,7 +864,11 @@ namespace eShop.Identity.API.Configuration
 }
 ```
 
-## 24. We migrate the Identity database
+## 26. We
+
+![image](https://github.com/user-attachments/assets/ff5deba0-c31b-4cd2-8fa4-ace5cea0c2ce)
+
+## 27. We migrate the Identity database
 
 We right click on the **Identity.API** project and we select **Set as StartUp project**
 
