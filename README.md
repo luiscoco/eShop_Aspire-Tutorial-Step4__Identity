@@ -524,7 +524,7 @@ static bool ShouldUseHttpForEndpoints()
 *@
 ```
 
-## 23. Update the appsettings.json file in the Identity.API project
+## 23. We update the appsettings.json file in the Identity.API project
 
 **appsettings.json**
 
@@ -553,5 +553,23 @@ static bool ShouldUseHttpForEndpoints()
 }
 ```
 
+## 24. We migrate the Identity database
 
+We right click on the **Identity.API** project and we select **Set as StartUp project**
+
+![image](https://github.com/user-attachments/assets/d330cc53-d45b-4ca7-85d7-85312ba8ae51)
+
+Then select the menu option **Tools->NuGet Package Manager->Package Manger Console** 
+
+![image](https://github.com/user-attachments/assets/91d42fbd-81e0-45f6-a9df-ed43654e0fd3)
+
+And we select the **Identity.API** project in the dropdown list
+
+We run this command to **add the first database migration**
+
+```
+Add-Migration databaseinitial
+```
+
+![image](https://github.com/user-attachments/assets/87440613-35fa-4a73-9304-2210fb2dd6b9)
 
