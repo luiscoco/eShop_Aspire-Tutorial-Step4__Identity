@@ -379,7 +379,7 @@ public static class ClaimsPrincipalExtensions
 }
 ```
 
-****
+**HttpClientExtensions.cs**
 
 ```csharp
 namespace eShop.ServiceDefaults;
