@@ -993,7 +993,45 @@ public interface IDbSeeder<in TContext> where TContext : DbContext
 }
 ```
 
-## 28. We migrate the Identity database
+## 28. We update the ApplicationUser.cs file
+
+**ApplicationUser.cs**
+
+```csharp
+namespace eShop.Identity.API.Models
+{
+    // Add profile data for application users by adding properties to the ApplicationUser class
+    public class ApplicationUser : IdentityUser
+    {
+        [Required]
+        public string CardNumber { get; set; }
+        [Required]
+        public string SecurityNumber { get; set; }
+        [Required]
+        [RegularExpression(@"(0[1-9]|1[0-2])\/[0-9]{2}", ErrorMessage = "Expiration should match a valid MM/YY value")]
+        public string Expiration { get; set; }
+        [Required]
+        public string CardHolderName { get; set; }
+        public int CardType { get; set; }
+        [Required]
+        public string Street { get; set; }
+        [Required]
+        public string City { get; set; }
+        [Required]
+        public string State { get; set; }
+        [Required]
+        public string Country { get; set; }
+        [Required]
+        public string ZipCode { get; set; }
+        [Required]
+        public string Name { get; set; }
+        [Required]
+        public string LastName { get; set; }
+    }
+}
+```
+
+## 29. We migrate the Identity database
 
 We right click on the **Identity.API** project and we select **Set as StartUp project**
 
