@@ -1031,7 +1031,65 @@ namespace eShop.Identity.API.Models
 }
 ```
 
-## 29. We migrate the Identity database
+## 29. We modify the middleware(Program.cs) in the Identity.API project
+
+**Program.cs**
+
+```csharp
+var builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
+
+// Add services to the container.
+builder.Services.AddControllersWithViews();
+
+builder.AddNpgsqlDbContext<ApplicationDbContext>("identitydb");
+
+builder.Services.AddMigration<ApplicationDbContext, UsersSeed>();
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+        .AddEntityFrameworkStores<ApplicationDbContext>()
+        .AddDefaultTokenProviders();
+
+builder.Services.AddIdentityServer(options =>
+{
+    //options.IssuerUri = "null";
+    options.Authentication.CookieLifetime = TimeSpan.FromHours(2);
+
+    options.Events.RaiseErrorEvents = true;
+    options.Events.RaiseInformationEvents = true;
+    options.Events.RaiseFailureEvents = true;
+    options.Events.RaiseSuccessEvents = true;
+
+    // TODO: Remove this line in production.
+    options.KeyManagement.Enabled = false;
+})
+.AddInMemoryIdentityResources(Config.GetResources())
+.AddInMemoryApiScopes(Config.GetApiScopes())
+.AddInMemoryApiResources(Config.GetApis())
+.AddInMemoryClients(Config.GetClients(builder.Configuration))
+.AddAspNetIdentity<ApplicationUser>()
+// TODO: Not recommended for production - you need to store your key material somewhere secure
+.AddDeveloperSigningCredential();
+
+builder.Services.AddTransient<IProfileService, ProfileService>();
+builder.Services.AddTransient<ILoginService<ApplicationUser>, EFLoginService>();
+builder.Services.AddTransient<IRedirectService, RedirectService>();
+
+var app = builder.Build();
+
+app.MapDefaultEndpoints();
+app.UseStaticFiles();
+// This cookie policy fixes login issues with Chrome 80+ using HTTP
+app.UseCookiePolicy(new CookiePolicyOptions { MinimumSameSitePolicy = SameSiteMode.Lax });
+app.UseRouting();
+app.UseIdentityServer();
+app.UseAuthorization();
+app.MapDefaultControllerRoute();
+app.Run();
+```
+
+## 30. We migrate the Identity database
 
 We right click on the **Identity.API** project and we select **Set as StartUp project**
 
@@ -1055,7 +1113,7 @@ We verify the **Migrations** folder was already created, containing the database
 
 ![image](https://github.com/user-attachments/assets/e94ce495-526e-49b1-9878-daf958135b41)
 
-## 30. We modify the launchSettings.json file in the Identity.API project
+## 31. We modify the launchSettings.json file in the Identity.API project
 
 ![image](https://github.com/user-attachments/assets/9014c842-c720-43b1-b2c4-8d1ad3db6055)
 
@@ -1084,17 +1142,17 @@ We verify the **Migrations** folder was already created, containing the database
 }
 ```
 
-## 31. We include the User razor in the WebApp project
+## 32. We include the User razor in the WebApp project
 
 We navigate to the User.razor component inside the **Components->Layout->HeaderBar.razor** and we uncomment the **UserMenu** component
 
 ![image](https://github.com/user-attachments/assets/0618a6d5-8c8f-4e6d-9760-219928f6efaf)
 
-## 32. We load "Microsoft.AspNetCore.Authentication.OpenIdConnect" Nuget package in the WebApp project
+## 33. We load "Microsoft.AspNetCore.Authentication.OpenIdConnect" Nuget package in the WebApp project
 
 ![image](https://github.com/user-attachments/assets/5ea1face-561f-4cd6-a51c-a07e4fa7472e)
 
-## 33. We add the LogOutService in the WebApp project
+## 34. We add the LogOutService in the WebApp project
 
 ![image](https://github.com/user-attachments/assets/ccdfe305-a029-49ce-bb9c-3d5c5569a238)
 
@@ -1113,7 +1171,7 @@ public class LogOutService
 }
 ```
 
-## 34. We add the Extensions file in the WebApp project
+## 35. We add the Extensions file in the WebApp project
 
 ![image](https://github.com/user-attachments/assets/225a54d3-da4a-40bf-9098-8366eab3ab74)
 
@@ -1206,7 +1264,7 @@ public static class Extensions
 }
 ```
 
-## 35. We update the middleware(Program.cs) in the WebApp project
+## 36. We update the middleware(Program.cs) in the WebApp project
 
 ![image](https://github.com/user-attachments/assets/832e7f5f-dc6d-4f4c-86de-2bb1322660ff)
 
@@ -1254,7 +1312,7 @@ app.MapForwarder("/product-images/{id}", "http://localhost:5301", "/api/catalog/
 app.Run();
 ```
 
-## 36. We run the application
+## 37. We run the application
 
 We select the **eShop.AppHost** project as the **StartUp project**
 
