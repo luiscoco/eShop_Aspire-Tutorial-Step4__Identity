@@ -868,7 +868,132 @@ namespace eShop.Identity.API.Configuration
 
 ![image](https://github.com/user-attachments/assets/ff5deba0-c31b-4cd2-8fa4-ace5cea0c2ce)
 
-## 27. We migrate the Identity database
+## 27. We add the Extension files in the Identity.API project
+
+![image](https://github.com/user-attachments/assets/324d34f4-4bb9-4ef5-8825-2cf94de35e74)
+
+**AtivityExtensions.cs**
+
+```csharp
+using System.Diagnostics;
+
+internal static class ActivityExtensions
+{
+    // See https://opentelemetry.io/docs/specs/otel/trace/semantic_conventions/exceptions/
+    public static void SetExceptionTags(this Activity activity, Exception ex)
+    {
+        if (activity is null)
+        {
+            return;
+        }
+
+        activity.AddTag("exception.message", ex.Message);
+        activity.AddTag("exception.stacktrace", ex.ToString());
+        activity.AddTag("exception.type", ex.GetType().FullName);
+        activity.SetStatus(ActivityStatusCode.Error);
+    }
+}
+```
+
+**MigrateDbContextExtensions.cs**
+
+```csharp
+using System.Diagnostics;
+
+namespace Microsoft.AspNetCore.Hosting;
+
+internal static class MigrateDbContextExtensions
+{
+    private static readonly string ActivitySourceName = "DbMigrations";
+    private static readonly ActivitySource ActivitySource = new(ActivitySourceName);
+
+    public static IServiceCollection AddMigration<TContext>(this IServiceCollection services)
+        where TContext : DbContext
+        => services.AddMigration<TContext>((_, _) => Task.CompletedTask);
+
+    public static IServiceCollection AddMigration<TContext>(this IServiceCollection services, Func<TContext, IServiceProvider, Task> seeder)
+        where TContext : DbContext
+    {
+        // Enable migration tracing
+        services.AddOpenTelemetry().WithTracing(tracing => tracing.AddSource(ActivitySourceName));
+
+        return services.AddHostedService(sp => new MigrationHostedService<TContext>(sp, seeder));
+    }
+
+    public static IServiceCollection AddMigration<TContext, TDbSeeder>(this IServiceCollection services)
+        where TContext : DbContext
+        where TDbSeeder : class, IDbSeeder<TContext>
+    {
+        services.AddScoped<IDbSeeder<TContext>, TDbSeeder>();
+        return services.AddMigration<TContext>((context, sp) => sp.GetRequiredService<IDbSeeder<TContext>>().SeedAsync(context));
+    }
+
+    private static async Task MigrateDbContextAsync<TContext>(this IServiceProvider services, Func<TContext, IServiceProvider, Task> seeder) where TContext : DbContext
+    {
+        using var scope = services.CreateScope();
+        var scopeServices = scope.ServiceProvider;
+        var logger = scopeServices.GetRequiredService<ILogger<TContext>>();
+        var context = scopeServices.GetService<TContext>();
+
+        using var activity = ActivitySource.StartActivity($"Migration operation {typeof(TContext).Name}");
+
+        try
+        {
+            logger.LogInformation("Migrating database associated with context {DbContextName}", typeof(TContext).Name);
+
+            var strategy = context.Database.CreateExecutionStrategy();
+
+            await strategy.ExecuteAsync(() => InvokeSeeder(seeder, context, scopeServices));
+        }
+        catch (Exception ex)
+        {
+            logger.LogError(ex, "An error occurred while migrating the database used on context {DbContextName}", typeof(TContext).Name);
+
+            activity.SetExceptionTags(ex);
+
+            throw;
+        }
+    }
+
+    private static async Task InvokeSeeder<TContext>(Func<TContext, IServiceProvider, Task> seeder, TContext context, IServiceProvider services)
+        where TContext : DbContext
+    {
+        using var activity = ActivitySource.StartActivity($"Migrating {typeof(TContext).Name}");
+
+        try
+        {
+            await context.Database.MigrateAsync();
+            await seeder(context, services);
+        }
+        catch (Exception ex)
+        {
+            activity.SetExceptionTags(ex);
+
+            throw;
+        }
+    }
+
+    private class MigrationHostedService<TContext>(IServiceProvider serviceProvider, Func<TContext, IServiceProvider, Task> seeder)
+        : BackgroundService where TContext : DbContext
+    {
+        public override Task StartAsync(CancellationToken cancellationToken)
+        {
+            return serviceProvider.MigrateDbContextAsync(seeder);
+        }
+
+        protected override Task ExecuteAsync(CancellationToken stoppingToken)
+        {
+            return Task.CompletedTask;
+        }
+    }
+}
+public interface IDbSeeder<in TContext> where TContext : DbContext
+{
+    Task SeedAsync(TContext context);
+}
+```
+
+## 28. We migrate the Identity database
 
 We right click on the **Identity.API** project and we select **Set as StartUp project**
 
