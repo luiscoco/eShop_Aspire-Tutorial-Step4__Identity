@@ -1084,17 +1084,17 @@ We verify the **Migrations** folder was already created, containing the database
 }
 ```
 
-## 30. We include the User razor in the WebApp project
+## 31. We include the User razor in the WebApp project
 
 We navigate to the User.razor component inside the **Components->Layout->HeaderBar.razor** and we uncomment the **UserMenu** component
 
 ![image](https://github.com/user-attachments/assets/0618a6d5-8c8f-4e6d-9760-219928f6efaf)
 
-## 31. We load "Microsoft.AspNetCore.Authentication.OpenIdConnect" Nuget package in the WebApp project
+## 32. We load "Microsoft.AspNetCore.Authentication.OpenIdConnect" Nuget package in the WebApp project
 
 ![image](https://github.com/user-attachments/assets/5ea1face-561f-4cd6-a51c-a07e4fa7472e)
 
-## 32. We add the LogOutService in the WebApp project
+## 33. We add the LogOutService in the WebApp project
 
 ![image](https://github.com/user-attachments/assets/ccdfe305-a029-49ce-bb9c-3d5c5569a238)
 
@@ -1113,7 +1113,7 @@ public class LogOutService
 }
 ```
 
-## 33. We add the Extensions file in the WebApp project
+## 34. We add the Extensions file in the WebApp project
 
 ![image](https://github.com/user-attachments/assets/225a54d3-da4a-40bf-9098-8366eab3ab74)
 
@@ -1205,7 +1205,55 @@ public static class Extensions
 }
 ```
 
-## 33. We run the application
+## 35. We update the middleware(Program.cs) in the WebApp project
+
+![image](https://github.com/user-attachments/assets/832e7f5f-dc6d-4f4c-86de-2bb1322660ff)
+
+We include this line in to add include the reference to the Extensions.cs file in the middleware
+
+```csharp
+builder.AddApplicationServices();
+```
+
+**Program.cs**
+
+```csharp
+
+using WebApp.Components;
+using eShop.WebApp.Services;
+
+var builder = WebApplication.CreateBuilder(args);
+
+builder.AddServiceDefaults();
+
+// Add services to the container.
+builder.Services.AddRazorComponents()
+.AddInteractiveServerComponents();
+
+builder.AddApplicationServices();
+
+var app = builder.Build();
+
+app.MapDefaultEndpoints();
+
+// Configure the HTTP request pipeline.
+if (!app.Environment.IsDevelopment())
+{
+    app.UseExceptionHandler("/Error", createScopeForErrors: true);
+    // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
+    app.UseHsts();
+}
+
+app.UseHttpsRedirection();
+app.UseAntiforgery();
+app.MapStaticAssets();
+app.MapRazorComponents<App>()
+    .AddInteractiveServerRenderMode();
+app.MapForwarder("/product-images/{id}", "http://localhost:5301", "/api/catalog/items/{id}/pic");
+app.Run();
+```
+
+## 36. We run the application
 
 We select the **eShop.AppHost** project as the **StartUp project**
 
