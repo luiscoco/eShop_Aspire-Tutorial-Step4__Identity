@@ -1051,3 +1051,7 @@ Add-Migration databaseinitial
 
 ![image](https://github.com/user-attachments/assets/87440613-35fa-4a73-9304-2210fb2dd6b9)
 
+We verify the **Migrations** folder was already created, containing the database migrations files
+
+![image](https://github.com/user-attachments/assets/e94ce495-526e-49b1-9878-daf958135b41)
+
