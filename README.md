@@ -1055,6 +1055,35 @@ We verify the **Migrations** folder was already created, containing the database
 
 ![image](https://github.com/user-attachments/assets/e94ce495-526e-49b1-9878-daf958135b41)
 
+## 30. We modify the launchSettings.json file in the Identity.API project
+
+![image](https://github.com/user-attachments/assets/9014c842-c720-43b1-b2c4-8d1ad3db6055)
+
+**launchSettings.json**
+
+```json
+{
+  "profiles": {
+    "http": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "http://localhost:5223",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    },
+    "https": {
+      "commandName": "Project",
+      "launchBrowser": true,
+      "applicationUrl": "https://localhost:5243;http://localhost:5223",
+      "environmentVariables": {
+        "ASPNETCORE_ENVIRONMENT": "Development"
+      }
+    }
+  }
+}
+```
+
 ## 30. We run the application
 
 We select the **eShop.AppHost** project as the **StartUp project**
