@@ -435,7 +435,7 @@ public static class HttpClientExtensions
 
 ## 21. We add the "User" folder inside "Pages" folder in the WebApp project
 
-
+![image](https://github.com/user-attachments/assets/dae6a02f-272b-4d1f-b93e-255f6144b331)
 
 ## 22. We add the User "Login.razor" and "Logout.razor" components
 
