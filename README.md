@@ -1144,9 +1144,9 @@ public static class Extensions
         builder.Services.AddSingleton<IProductImageUrlProvider, ProductImageUrlProvider>();
 
         // HTTP and GRPC client registrations
-        builder.Services.AddHttpClient<CatalogService>(o => o.BaseAddress = new("http://catalog-api"))
-            .AddApiVersion(1.0)
-            .AddAuthToken();
+        builder.Services.AddHttpClient<CatalogService>(o => o.BaseAddress = new("http://localhost:5301"))
+           .AddApiVersion(1.0)
+           .AddAuthToken();
     }
 
     public static void AddAuthenticationServices(this IHostApplicationBuilder builder)
