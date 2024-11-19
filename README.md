@@ -1084,7 +1084,19 @@ We verify the **Migrations** folder was already created, containing the database
 }
 ```
 
-## 30. We run the application
+## 30. We include the User razor in the WebApp project
+
+We navigate to the User.razor component inside the **Components->Layout->HeaderBar.razor** and we uncomment the **UserMenu** component
+
+![image](https://github.com/user-attachments/assets/0618a6d5-8c8f-4e6d-9760-219928f6efaf)
+
+## 31. We load "Microsoft.AspNetCore.Authentication.OpenIdConnect" Nuget package in the WebApp project
+
+![image](https://github.com/user-attachments/assets/5ea1face-561f-4cd6-a51c-a07e4fa7472e)
+
+## 32. 
+
+## 33. We run the application
 
 We select the **eShop.AppHost** project as the **StartUp project**
 
