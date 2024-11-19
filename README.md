@@ -1055,3 +1055,11 @@ We verify the **Migrations** folder was already created, containing the database
 
 ![image](https://github.com/user-attachments/assets/e94ce495-526e-49b1-9878-daf958135b41)
 
+## 30. We run the application
+
+We select the **eShop.AppHost** project as the **StartUp project**
+
+![image](https://github.com/user-attachments/assets/7e63a0b7-36e3-4201-a14e-a555bb390726)
+
+We run the application and verify the results
+
