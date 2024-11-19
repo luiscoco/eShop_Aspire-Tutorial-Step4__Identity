@@ -441,6 +441,42 @@ public static class HttpClientExtensions
 
 ![image](https://github.com/user-attachments/assets/7b734cca-4049-4fb9-b8d1-aec6aeac3d6c)
 
+**LogIn.razor**
+
+```csharp
+@page "/user/login"
+@inject NavigationManager Nav
+@attribute [Authorize]
+@code {
+    [SupplyParameterFromQuery]
+    public string? ReturnUrl { get; set; }
+
+    [CascadingParameter]
+    public HttpContext? HttpContext { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        var returnUrl = ReturnUrl ?? "/";
+        var url = new Uri(returnUrl, UriKind.RelativeOrAbsolute);
+        Nav.NavigateTo(url.IsAbsoluteUri ? "/" : returnUrl);
+        await base.OnInitializedAsync();
+    }
+
+    public static string Url(NavigationManager nav)
+        => $"user/login?returnUrl={Uri.EscapeDataString(nav.ToBaseRelativePath(nav.Uri))}";
+}
+```
+
+**LogOut.razor**
+
+```csharp
+@page "/user/logout"
+@*
+    When the 'log out' form is posted, it is handled inside UserMenu.razor.
+    This page only exists to create an endpoint that accepts the form post.
+*@
+```
+
 ## 23. 
 
 
