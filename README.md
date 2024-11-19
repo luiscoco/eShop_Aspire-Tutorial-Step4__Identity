@@ -431,6 +431,8 @@ public static class HttpClientExtensions
 
 ## 20. We update the middleware(Program.cs) in the eShop.AppHost project
 
+![image](https://github.com/user-attachments/assets/671753b1-5ea7-4806-9299-bf8ef84cee5f)
+
 **Program.cs**
 
 ```csharp
