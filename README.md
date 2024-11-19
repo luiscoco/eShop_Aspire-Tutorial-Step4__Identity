@@ -524,6 +524,34 @@ static bool ShouldUseHttpForEndpoints()
 *@
 ```
 
-## 23. 
+## 23. Update the appsettings.json file in the Identity.API project
+
+**appsettings.json**
+
+```json
+{
+  "Logging": {
+    "LogLevel": {
+      "Default": "Information",
+      "Microsoft.AspNetCore": "Warning"
+    }
+  },
+  "MauiCallback": "maui://authcallback",
+  "UseCustomizationData": false,
+  "TokenLifetimeMinutes": 120,
+  "PermanentTokenLifetimeDays": 365
+}
+```
+
+**appsettings.Development.json**
+
+```json
+{
+  "ConnectionStrings": {
+    "IdentityDB": "Host=localhost;Database=IdentityDB;Username=postgres;Password=yourWeak(!)Password"
+  }
+}
+```
+
 
 
