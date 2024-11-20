@@ -1320,3 +1320,14 @@ We select the **eShop.AppHost** project as the **StartUp project**
 
 We run the application and verify the results
 
+![image](https://github.com/user-attachments/assets/7b7397dd-e06e-4179-adf4-7aec4970b0e0)
+
+![image](https://github.com/user-attachments/assets/b1b4b0db-d597-45f5-9c37-11beb0c7e32d)
+
+![image](https://github.com/user-attachments/assets/3d93576e-b9da-45d6-84e1-04bed8fe94d3)
+
+![image](https://github.com/user-attachments/assets/dde722c1-392e-4dbd-b563-1dc2fc0c832e)
+
+
+
+
