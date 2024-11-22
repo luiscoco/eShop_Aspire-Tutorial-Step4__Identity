@@ -1348,7 +1348,7 @@ Now if we run the application we verify the executing protocol endpoints for the
 
 ![image](https://github.com/user-attachments/assets/14c9e4ce-5588-4460-95f6-8caef9c40cfe)
 
-We can check the **IdentityServer** visiting your **claims** and **grants**
+We can check the **IdentityServer** (http://localhost:5202) visiting your **claims** and **grants**
 
 ![image](https://github.com/user-attachments/assets/50479c9d-d897-4ec5-bb9e-98777776c3ba)
 
