@@ -1336,4 +1336,28 @@ We run the application and verify the results
 
 ![image](https://github.com/user-attachments/assets/8d9ccd2f-6f4c-4be9-9973-1291f4d4e677)
 
+## 38. (Optional) How to run the application with the HTTP protocol
+
+By the default **eShop.AppHost** will be run with the HTTPS protocol, but if we modify the **launchSettings.json** file we can run the Aspire application with **HTTP** protocol
+
+**launchSettings.json**
+
+![image](https://github.com/user-attachments/assets/ef64224f-a5f9-4b09-982a-da5ea727e215)
+
+Now if we run the application we verify the executing protocol endpoints for the projecst are using **HTTP**
+
+![image](https://github.com/user-attachments/assets/14c9e4ce-5588-4460-95f6-8caef9c40cfe)
+
+We can check the **IdentityServer** visiting your **claims** and **grants**
+
+![image](https://github.com/user-attachments/assets/50479c9d-d897-4ec5-bb9e-98777776c3ba)
+
+We first visit the **claims**, we are redirect to the login page
+
+![image](https://github.com/user-attachments/assets/97e46fc1-bd80-4243-8fa1-94b9f71bcfe2)
+
+![image](https://github.com/user-attachments/assets/700f7bc7-8f3f-4fa9-9d14-8c28beacf0af)
+
+We also visit the **grants**
+
 
