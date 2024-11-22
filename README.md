@@ -1360,4 +1360,5 @@ We first visit the **claims**, we are redirect to the login page
 
 We also visit the **grants**
 
+![image](https://github.com/user-attachments/assets/115c7882-03c8-4b48-8257-d70924bbab81)
 
