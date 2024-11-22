@@ -1362,3 +1362,14 @@ We also visit the **grants**
 
 ![image](https://github.com/user-attachments/assets/115c7882-03c8-4b48-8257-d70924bbab81)
 
+We can also visit the **WebApp** (http://localhost:5122)
+
+![image](https://github.com/user-attachments/assets/8018549f-c7b8-4762-a185-5671642f120a)
+
+![image](https://github.com/user-attachments/assets/13cdf5e7-2902-4c85-b7e9-d67efaf06dc1)
+
+![image](https://github.com/user-attachments/assets/95975841-acd8-41b5-bd0d-98783a566c42)
+
+![image](https://github.com/user-attachments/assets/24740488-63bb-467d-989b-2c431391d6c2)
+
+![image](https://github.com/user-attachments/assets/881d5414-8a76-46be-a2ef-9f8db1346581)
