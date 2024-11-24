@@ -19,7 +19,7 @@ var identityEndpoint = identityApi.GetEndpoint(launchProfileName);
 var catalogApi = builder.AddProject<Projects.Catalog_API>("catalog-api")
     .WithReference(catalogDb);
 
-var webApp = builder.AddProject<Projects.WebApp>("webapp")
+var webApp = builder.AddProject<Projects.WebApp>("webapp", launchProfileName))
     .WithExternalHttpEndpoints()
     .WithReference(catalogApi)
     .WithEnvironment("IdentityUrl", identityEndpoint);
