@@ -443,7 +443,7 @@ var postgres = builder.AddPostgres("postgres")
     .WithImageTag("latest")
     .WithLifetime(ContainerLifetime.Persistent);
 
-var catalogDb = postgres.AddDatabase("catalogdb");
+var catalogDb = postgres.AddDatabase("catalogDB");
 var identityDb = postgres.AddDatabase("identitydb");
 
 var launchProfileName = ShouldUseHttpForEndpoints() ? "http" : "https";
@@ -1320,7 +1320,7 @@ We select the **eShop.AppHost** project as the **StartUp project**
 
 We run the application and verify the results
 
-![image](https://github.com/user-attachments/assets/7b7397dd-e06e-4179-adf4-7aec4970b0e0)
+![image](https://github.com/user-attachments/assets/52d76e1f-8c27-42d3-ac07-233df3f550ef)
 
 ![image](https://github.com/user-attachments/assets/b1b4b0db-d597-45f5-9c37-11beb0c7e32d)
 
