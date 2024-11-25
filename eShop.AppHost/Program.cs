@@ -6,7 +6,7 @@ var postgres = builder.AddPostgres("postgres")
     .WithLifetime(ContainerLifetime.Persistent);
 
 var catalogDb = postgres.AddDatabase("catalogdb");
-var identityDb = postgres.AddDatabase("identitydb");
+var identityDb = postgres.AddDatabase("IdentityDB");
 
 var launchProfileName = ShouldUseHttpForEndpoints() ? "http" : "https";
 
