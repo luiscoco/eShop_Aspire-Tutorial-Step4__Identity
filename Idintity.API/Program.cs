@@ -5,7 +5,7 @@ builder.AddServiceDefaults();
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
-builder.AddNpgsqlDbContext<ApplicationDbContext>("identitydb");
+builder.AddNpgsqlDbContext<ApplicationDbContext>("IdentityDB");
 
 builder.Services.AddMigration<ApplicationDbContext, UsersSeed>();
 
